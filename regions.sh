@@ -1,7 +1,27 @@
-Assign IAM Role to EC2 instance
+check AWS configurations
+------------------------
+cd ~
+ls -al
+→ if we cant find .aws folder then aws was not configured
+
+Configure AWS
+--------------
+aws configure // enter id,key,region,format like json
+Note: create .aws folder 
+→ cat .aws/conf // we see AWS configurations here
+
+OR 
+
+If working in EC2 Instance then Assign IAM Role to it
+
 Login to EC2 as ec2-user
-aws --version
+------------------------
+aws --version // 2.4.5 version
+cd ~
+ls -al
+cat .aws/config  // see data
 ----------------------
+
 #!/bin/bash
 For REGION in $(aws ec2 describe-regions | jq ".Regions[].RegionName" | tr -d '"'); do
     echo "--------------$REGION-------------"
