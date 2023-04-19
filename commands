@@ -1,1 +1,19 @@
 git add .; git commit -m "sh"; git push origin master;
+
+create ec2 instance 
+assign IAM Role
+aws ec2 describe-vpcs // get output
+
+jenkins-job
+------------
+git
+---
+https://github.com/aws-samples/eb-tomcat-snakes.git
+
+execute shell commands in jenkins
+---------------------------------
+ls -al
+chmod 777 build.sh
+./build.sh
+ls -al
+aws s3 cp ROOT.war s3://bkt-001
